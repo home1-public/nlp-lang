@@ -38,12 +38,13 @@ public class MapCount<T> implements Serializable {
 		if ((value = hm.get(t)) != null) {
 			hm.put(t, value + n);
 		} else {
-			hm.put(t, Double.valueOf(n));
+			hm.put(t, n);
 		}
 	}
 
 	/**
 	 * 兼容旧的api
+	 *
 	 * @param t
 	 * @param n
 	 */
@@ -105,4 +106,37 @@ public class MapCount<T> implements Serializable {
 		}
 		return sb.toString();
 	}
+
+//	/**
+//	 * 批量增加
+//	 *
+//	 * @param hs
+//	 */
+//	public void addAll(Collection<T> collection) {
+//		for (T t : collection) {
+//			this.add(t);
+//		}
+//	}
+//
+//	/**
+//	 * 批量增加
+//	 *
+//	 * @param hs
+//	 */
+//	public void addAll(Collection<T> collection, double weight) {
+//		for (T t : collection) {
+//			this.add(t, weight);
+//		}
+//	}
+//
+//	/**
+//	 * 批量增加
+//	 *
+//	 * @param hs
+//	 */
+//	public void addAll(Map<T, Double> map) {
+//		for (Entry<T, Double> e : map.entrySet()) {
+//			this.add(e.getKey(), e.getValue());
+//		}
+//	}
 }

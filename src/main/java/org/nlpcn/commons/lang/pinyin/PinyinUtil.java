@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.nlpcn.commons.lang.tire.GetWord;
 import org.nlpcn.commons.lang.tire.SmartGetWord;
 import org.nlpcn.commons.lang.tire.domain.SmartForest;
 import org.nlpcn.commons.lang.util.StringUtil;
@@ -192,6 +193,6 @@ enum PinyinUtil {
      * @param pinyins
      */
     public void insertPinyin(String word, String[] pinyins){
-        polyphoneDict.addBranch(word, pinyins);
+        polyphoneDict.add(word, pinyins);
     }
 }

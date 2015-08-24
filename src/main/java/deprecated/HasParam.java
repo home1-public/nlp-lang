@@ -1,4 +1,4 @@
-package org.nlpcn.commons.lang.tire.domain;
+package deprecated;
 
 @Deprecated
 public interface HasParam<P> {

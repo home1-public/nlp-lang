@@ -101,7 +101,7 @@ public class Occurrence implements Serializable {
 		String word2 = null;
 		for (Integer id : count.relationSet) {
 			word2 = idWordMap.get(id);
-			map.put(word2, distance(word, word2)*word2Mc.get(word2).score);
+			map.put(word2, distance(word, word2) * word2Mc.get(word2).score);
 		}
 		return CollectionUtil.sortMapByValue(map, 1);
 	}
@@ -109,12 +109,12 @@ public class Occurrence implements Serializable {
 	/**
 	 * tf/idf 计算分数
 	 */
-	public void computeTFIDF(){
-		int size = word2Mc.size() ;
-		Count count = null ;
+	public void computeTFIDF() {
+		int size = word2Mc.size();
+		Count count = null;
 		for (Entry<String, Count> element : word2Mc.entrySet()) {
-			count = element.getValue() ;
-			count.score = Math.log((size+count.score)/count.score) ;
+			count = element.getValue();
+			count.score = Math.log((size + count.score) / count.score);
 		}
 	}
 
