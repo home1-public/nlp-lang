@@ -87,7 +87,6 @@ public class SmartGetWord<T> {
 				if (this.isBack) {
 					this.offe = this.root;
 					this.str = new String(this.chars, this.root, this.tempOffe);
-
 					if ((this.root > 0) && (isE(this.chars[(this.root - 1)])) && (isE(this.str.charAt(0)))) {
 						this.str = EMPTYSTRING;
 					}
