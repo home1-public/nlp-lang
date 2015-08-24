@@ -6,17 +6,17 @@ import org.nlpcn.commons.lang.tire.domain.SmartForest;
 import org.nlpcn.commons.lang.util.StringUtil;
 
 /**
- * Created by ansj on 3/30/14.
+ * by ansj on 3/30/14.
  */
 public class SmartGetWordTest {
 
 	@Test
-	public void test(){
+	public void test() {
 		/**
 		 * 词典的构造.一行一个词后面是参数.可以从文件读取.可以是read流.
 		 */
 		long start = System.currentTimeMillis();
-		SmartForest<Integer> forest = new SmartForest<Integer>();
+		SmartForest<Integer> forest = new SmartForest<>();
 
 		forest.add("中国", 3);
 
@@ -27,12 +27,16 @@ public class SmartGetWordTest {
 		forest.add("中国人", 3);
 
 		String content = " Android-java-中国人";
+		
+		
+		forest.remove("中国人") ;
+		
 		content = StringUtil.rmHtmlTag(content);
 
 		for (int i = 0; i < 1; i++) {
 			SmartGetWord<Integer> udg = forest.getWord(content.toLowerCase().toCharArray());
 
-			String temp = null;
+			String temp;
 			while ((temp = udg.getFrontWords()) != null) {
 				System.out.println(temp + "\t" + udg.getParam());
 			}
