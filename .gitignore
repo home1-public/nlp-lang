@@ -8,4 +8,5 @@ out/
 .settings/
 bin/
 *-pom.xml
+src/main/java/deprecated
 

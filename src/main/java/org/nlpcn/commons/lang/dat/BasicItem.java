@@ -30,8 +30,8 @@ public class BasicItem extends Item {
 		return index + "\t" + name + "\t" + base + "\t" + check + "\t" + status;
 	}
 
-//	@Override
-//	public String toString() {
-//		return this.toText();
-//	}
+	@Override
+	public String toString() {
+		return this.toText();
+	}
 }
