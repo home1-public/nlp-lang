@@ -1,4 +1,4 @@
-/** 
+/**
  * File    : Pinyin.java 
  * Created : 2014年1月22日 
  * By      : luhuiguo 
@@ -21,7 +21,7 @@ import org.nlpcn.commons.lang.tire.domain.SmartForest;
 import org.nlpcn.commons.lang.util.StringUtil;
 
 /**
- * 
+ *
  * @author luhuiguo
  * @author ansj
  */
@@ -57,8 +57,7 @@ enum PinyinUtil {
 		pinyinDict = new ArrayList<String>();
 
 		try {
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(new BufferedInputStream(getClass().getResourceAsStream(PINYIN_MAPPING_FILE)), StandardCharsets.UTF_8));
+			BufferedReader in = new BufferedReader(new InputStreamReader(new BufferedInputStream(getClass().getResourceAsStream(PINYIN_MAPPING_FILE)), StandardCharsets.UTF_8));
 			String line = null;
 			while (null != (line = in.readLine())) {
 				if (line.length() == 0 || line.startsWith(SHARP)) {
@@ -85,8 +84,7 @@ enum PinyinUtil {
 		polyphoneDict = new SmartForest<String[]>();
 
 		try {
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(new BufferedInputStream(getClass().getResourceAsStream(POLYPHONE_MAPPING_FILE)), StandardCharsets.UTF_8));
+			BufferedReader in = new BufferedReader(new InputStreamReader(new BufferedInputStream(getClass().getResourceAsStream(POLYPHONE_MAPPING_FILE)), StandardCharsets.UTF_8));
 
 			String line = null;
 			while (null != (line = in.readLine())) {
@@ -101,7 +99,7 @@ enum PinyinUtil {
 				}
 				maxLen = maxLen < pair[0].length() ? pair[0].length() : maxLen;
 
-				polyphoneDict.add(pair[0], pair[1].split(SPACE));
+				polyphoneDict.addBranch(pair[0], pair[1].split(SPACE));
 
 			}
 
@@ -191,11 +189,10 @@ enum PinyinUtil {
 
 	/**
 	 * 动态增加拼音到词典
-	 * 
 	 * @param word
 	 * @param pinyins
 	 */
-	public void insertPinyin(String word, String[] pinyins) {
+	public void insertPinyin(String word, String[] pinyins){
 		polyphoneDict.add(word, pinyins);
 	}
 }

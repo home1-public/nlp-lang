@@ -23,11 +23,11 @@ public class Library {
 		return makeLibrary(br, new Forest());
 	}
 
+
 	/**
 	 * 传入value数组.构造树
 	 *
 	 * @param values
-	 * @param forest
 	 * @return
 	 */
 	public static Forest makeForest(List<Value> values) {
@@ -47,8 +47,7 @@ public class Library {
 	 * @throws Exception
 	 */
 	private static Forest makeLibrary(BufferedReader br, Forest forest) throws Exception {
-		if (br == null)
-			return forest;
+		if (br == null) return forest;
 		try {
 			String temp = null;
 			while ((temp = br.readLine()) != null) {
@@ -85,7 +84,7 @@ public class Library {
 		insertWord(forest, temp, resultParams);
 	}
 
-	private static void insertWord(Forest forest, String temp, String... param) {
+	private static void insertWord(Forest forest, String temp, String[] param) {
 		Forest branch = forest;
 		char[] chars = temp.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
@@ -102,7 +101,7 @@ public class Library {
 	 * 删除一个词
 	 *
 	 * @param forest
-	 * @param temp
+	 * @param word
 	 */
 	public static void removeWord(Forest forest, String word) {
 		Forest branch = forest;

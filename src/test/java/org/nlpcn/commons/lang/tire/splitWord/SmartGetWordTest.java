@@ -1,6 +1,7 @@
 package org.nlpcn.commons.lang.tire.splitWord;
 
 import org.junit.Test;
+import org.nlpcn.commons.lang.tire.GetWord;
 import org.nlpcn.commons.lang.tire.SmartGetWord;
 import org.nlpcn.commons.lang.tire.domain.SmartForest;
 import org.nlpcn.commons.lang.util.StringUtil;
@@ -27,10 +28,10 @@ public class SmartGetWordTest {
 		forest.add("中国人", 3);
 
 		String content = " Android-java-中国人";
-		
-		
+
+
 		forest.remove("中国人") ;
-		
+
 		content = StringUtil.rmHtmlTag(content);
 
 		for (int i = 0; i < 1; i++) {

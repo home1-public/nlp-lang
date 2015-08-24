@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 /**
  * java 一个简单的io操作
- * 
+ *
  * @author ansj
  */
 public class IOUtil {
@@ -61,7 +61,7 @@ public class IOUtil {
 
 	/**
 	 * 将输入流转化为字节流
-	 * 
+	 *
 	 * @param inputStream
 	 * @param charEncoding
 	 * @return
@@ -73,7 +73,7 @@ public class IOUtil {
 
 	/**
 	 * 读取文件获得正文
-	 * 
+	 *
 	 * @param path
 	 * @param charEncoding
 	 * @return
@@ -84,7 +84,7 @@ public class IOUtil {
 
 	/**
 	 * 从流中读取正文内容
-	 * 
+	 *
 	 * @param is
 	 * @param charEncoding
 	 * @return
@@ -111,7 +111,7 @@ public class IOUtil {
 
 	/**
 	 * 从文件中读取正文内容
-	 * 
+	 *
 	 * @param file
 	 * @param charEncoding
 	 * @return
@@ -151,7 +151,7 @@ public class IOUtil {
 
 	/**
 	 * 将一个对象序列化到硬盘中
-	 * 
+	 *
 	 * @param string
 	 * @param hm
 	 * @throws java.io.IOException
@@ -172,7 +172,7 @@ public class IOUtil {
 
 	/**
 	 * 关闭字符流
-	 * 
+	 *
 	 * @param reader
 	 */
 	public static void close(Reader reader) {
@@ -187,7 +187,7 @@ public class IOUtil {
 
 	/**
 	 * 关闭字节流
-	 * 
+	 *
 	 * @param is
 	 */
 	public static void close(InputStream is) {
@@ -201,7 +201,7 @@ public class IOUtil {
 
 	/**
 	 * 关闭字节流
-	 * 
+	 *
 	 * @param is
 	 */
 	public static void close(OutputStream os) {
@@ -241,7 +241,7 @@ public class IOUtil {
 
 	/**
 	 * 加载一个文件到hashMap
-	 * 
+	 *
 	 * @param path
 	 * @param charEncoding
 	 * @param key
@@ -304,7 +304,7 @@ public class IOUtil {
 
 	/**
 	 * 从一个字符流读取文件到list.
-	 * 
+	 *
 	 * @param br
 	 * @return
 	 * @throws java.io.IOException

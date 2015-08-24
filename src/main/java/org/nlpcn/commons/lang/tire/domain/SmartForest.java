@@ -2,7 +2,9 @@ package org.nlpcn.commons.lang.tire.domain;
 
 import java.util.Arrays;
 
+import lombok.Getter;
 import org.nlpcn.commons.lang.tire.SmartGetWord;
+
 
 /**
  * 一个小树,和Forest的区别是.这个在首字也是用二分查找,做过一次优化.达到到达一定量级自动扩展为hash定位 在ansj分词中这个应用是在自适应分词
@@ -11,16 +13,15 @@ import org.nlpcn.commons.lang.tire.SmartGetWord;
  */
 public class SmartForest<T> implements Comparable<SmartForest<T>> {
 
-	private static final int MAX_SIZE = 65536;
-	/**
-	 * status 此字的状态1，继续 2，是个词语但是还可以继续 ,3确定 nature 词语性质
-	 */
-	public SmartForest<T>[] branches = null;
+	protected static final Integer MAX_SIZE = 65536;
+
+	@Getter
+	protected SmartForest<T>[] branches = null;
 	// 单独查找出来的对象
-	SmartForest<T> branch = null;
+	protected SmartForest<T> branch = null;
 	private double rate = 0.9;
 	private char c;
-	// 状态
+	/** 状态 status 此字的状态1，继续 2，是个词语但是还可以继续 ,3确定 nature 词语性质*/
 	private byte status = 1;
 	// 词典后的参数
 	private T param = null;
@@ -31,17 +32,17 @@ public class SmartForest<T> implements Comparable<SmartForest<T>> {
 
 	// 首位直接数组定位
 	@SuppressWarnings("unchecked")
-	public SmartForest(double rate) {
-		branches = new SmartForest[MAX_SIZE];
+	public SmartForest(final double rate) {
+		this.branches = new SmartForest[MAX_SIZE];
 		this.rate = rate;
 	}
 
-	// temp branch
-	private SmartForest(char c) {
+	// temp branch for search
+	private SmartForest(final char c) {
 		this.c = c;
 	}
 
-	public SmartForest(char c, int status, T param) {
+	public SmartForest(final char c, final int status, final T param) {
 		this.c = c;
 		this.status = (byte) status;
 		this.param = param;
@@ -65,19 +66,19 @@ public class SmartForest<T> implements Comparable<SmartForest<T>> {
 			}
 			this.branch = this.branches[bs];
 			switch (branch.getStatus()) {
-			case -1:
-				this.branch.setStatus(1);
-				break;
-			case 1:
-				if (this.branch.getStatus() == 3) {
-					this.branch.setStatus(2);
-				}
-				break;
-			case 3:
-				if (this.branch.getStatus() != 3) {
-					this.branch.setStatus(2);
-				}
-				this.branch.setParam(branch.getParam());
+				case -1:
+					this.branch.setStatus(1);
+					break;
+				case 1:
+					if (this.branch.getStatus() == 3) {
+						this.branch.setStatus(2);
+					}
+					break;
+				case 3:
+					if (this.branch.getStatus() != 3) {
+						this.branch.setStatus(2);
+					}
+					this.branch.setParam(branch.getParam());
 			}
 			return this.branch;
 		}
@@ -257,7 +258,7 @@ public class SmartForest<T> implements Comparable<SmartForest<T>> {
 
 	/**
 	 * 得到抽詞器
-	 * 
+	 *
 	 * @param chars
 	 * @return
 	 */
@@ -267,7 +268,7 @@ public class SmartForest<T> implements Comparable<SmartForest<T>> {
 
 	/**
 	 * 取得所有的分支
-	 * 
+	 *
 	 * @return
 	 */
 	public SmartForest<T>[] getBranches() {
@@ -276,8 +277,8 @@ public class SmartForest<T> implements Comparable<SmartForest<T>> {
 
 	/**
 	 * 删除一个词语
-	 * 
-	 * @param string
+	 *
+	 * @param word
 	 */
 	public void remove(String word) {
 		getBranch(word).status = 1;

@@ -68,15 +68,133 @@ public class WordAlert {
 			} else if (i >= 'a' && i <= 'z') {
 				CHARCOVER[i] = (char) i;
 			}
-
-			CHARCOVER['﹩'] = '$';
-			CHARCOVER['　'] = ' ';
 		}
+
+		CHARCOVER['﹩'] = '$';
+		CHARCOVER['　'] = ' ';
+//		CHARCOVER['-'] = '·';
+//		CHARCOVER['．'] = '.';
+//		CHARCOVER['•'] = '·';
+//		CHARCOVER[','] = '。';
+//		CHARCOVER['，'] = '。';
+//		CHARCOVER['！'] = '。';
+//		CHARCOVER['!'] = '。';
+//		CHARCOVER['？'] = '。';
+//		CHARCOVER['?'] = '。';
+//		CHARCOVER['；'] = '。';
+//		CHARCOVER['`'] = '。';
+//		CHARCOVER['﹑'] = '。';
+//		CHARCOVER['^'] = '。';
+//		CHARCOVER['…'] = '。';
+//		CHARCOVER['“'] = '"';
+//		CHARCOVER['”'] = '"';
+//		CHARCOVER['〝'] = '"';
+//		CHARCOVER['〞'] = '"';
+//		CHARCOVER['~'] = '"';
+//		CHARCOVER['\\'] = '。';
+//		CHARCOVER['∕'] = '。';
+//		CHARCOVER['|'] = '。';
+//		CHARCOVER['¦'] = '。';
+//		CHARCOVER['‖'] = '。';
+//		CHARCOVER['—'] = '。';
+//		CHARCOVER['('] = '《';
+//		CHARCOVER[')'] = '》';
+//		CHARCOVER['〈'] = '《';
+//		CHARCOVER['〉'] = '》';
+//		CHARCOVER['﹞'] = '》';
+//		CHARCOVER['﹝'] = '《';
+//		CHARCOVER['「'] = '《';
+//		CHARCOVER['」'] = '》';
+//		CHARCOVER['‹'] = '《';
+//		CHARCOVER['›'] = '》';
+//		CHARCOVER['〖'] = '《';
+//		CHARCOVER['〗'] = '"';
+//		CHARCOVER['】'] = '》';
+//		CHARCOVER['【'] = '《';
+//		CHARCOVER['»'] = '》';
+//		CHARCOVER['«'] = '《';
+//		CHARCOVER['』'] = '》';
+//		CHARCOVER['『'] = '《';
+//		CHARCOVER['〕'] = '》';
+//		CHARCOVER['〔'] = '《';
+//		CHARCOVER['}'] = '》';
+//		CHARCOVER['{'] = '《';
+//		CHARCOVER[']'] = '》';
+//		CHARCOVER['['] = '《';
+//		CHARCOVER['﹐'] = '。';
+//		CHARCOVER['¸'] = '。';
+//		CHARCOVER['︰'] = '﹕';
+//		CHARCOVER['﹔'] = '。';
+//		CHARCOVER[';'] = '。';
+//		CHARCOVER['！'] = '。';
+//		CHARCOVER['¡'] = '。';
+//		CHARCOVER['？'] = '。';
+//		CHARCOVER['¿'] = '。';
+//		CHARCOVER['﹖'] = '。';
+//		CHARCOVER['﹌'] = '。';
+//		CHARCOVER['﹏'] = '。';
+//		CHARCOVER['﹋'] = '。';
+//		CHARCOVER['＇'] = '。';
+//		CHARCOVER['´'] = '。';
+//		CHARCOVER['ˊ'] = '。';
+//		CHARCOVER['ˋ'] = '。';
+//		CHARCOVER['―'] = '。';
+//		CHARCOVER['﹫'] = '@';
+//		CHARCOVER['︳'] = '。';
+//		CHARCOVER['︴'] = '。';
+//		CHARCOVER['﹢'] = '+';
+//		CHARCOVER['﹦'] = '=';
+//		CHARCOVER['﹤'] = '《';
+//		CHARCOVER['<'] = '《';
+//		CHARCOVER['˜'] = '。';
+//		CHARCOVER['~'] = '。';
+//		CHARCOVER['﹟'] = '。';
+//		CHARCOVER['#'] = '。';
+//		CHARCOVER['﹩'] = '$';
+//		CHARCOVER['﹠'] = '。';
+//		CHARCOVER['&'] = '。';
+//		CHARCOVER['﹪'] = '%';
+//		CHARCOVER['﹡'] = '。';
+//		CHARCOVER['*'] = '。';
+//		CHARCOVER['﹨'] = '。';
+//		CHARCOVER['\\'] = '。';
+//		CHARCOVER['﹍'] = '。';
+//		CHARCOVER['﹉'] = '。';
+//		CHARCOVER['﹎'] = '。';
+//		CHARCOVER['﹊'] = '。';
+//		CHARCOVER['ˇ'] = '。';
+//		CHARCOVER['︵'] = '《';
+//		CHARCOVER['︶'] = '》';
+//		CHARCOVER['︷'] = '《';
+//		CHARCOVER['︸'] = '》';
+//		CHARCOVER['︹'] = '《';
+//		CHARCOVER['︿'] = '《';
+//		CHARCOVER['﹀'] = '》';
+//		CHARCOVER['︺'] = '》';
+//		CHARCOVER['︽'] = '《';
+//		CHARCOVER['︾'] = '》';
+//		CHARCOVER['_'] = '。';
+//		CHARCOVER['ˉ'] = '。';
+//		CHARCOVER['﹁'] = '《';
+//		CHARCOVER['﹂'] = '》';
+//		CHARCOVER['﹃'] = '《';
+//		CHARCOVER['﹄'] = '》';
+//		CHARCOVER['︻'] = '《';
+//		CHARCOVER['︼'] = '》';
+//		CHARCOVER['/'] = '。';
+//		CHARCOVER['（'] = '《';
+//		CHARCOVER['>'] = '》';
+//		CHARCOVER['）'] = '》';
+//		CHARCOVER['<'] = '《';
+//		CHARCOVER[' '] = ' ';
+//		CHARCOVER['\t'] = '\t';
+//		CHARCOVER['。'] = '。';
+//		CHARCOVER['@'] = '@';
 	}
 
 	/**
 	 * 对全角的字符串,大写字母进行转译.如ｓｄｆｓｄｆ
-	 * 
+	 *
 	 * @param chars
 	 * @param start
 	 * @param end
@@ -140,7 +258,7 @@ public class WordAlert {
 
 	/**
 	 * 将一个字符串标准化
-	 * 
+	 *
 	 * @param str
 	 * @return
 	 */
@@ -160,7 +278,7 @@ public class WordAlert {
 
 	/**
 	 * 判断一个字符串是否是english
-	 * 
+	 *
 	 * @param word
 	 * @return
 	 */
@@ -179,7 +297,7 @@ public class WordAlert {
 
 	/**
 	 * 判断一个字符串是否是数字
-	 * 
+	 *
 	 * @param word
 	 * @return
 	 */
@@ -198,7 +316,7 @@ public class WordAlert {
 
 	/**
 	 * 将一个char标准化
-	 * 
+	 *
 	 * @param c
 	 * @return
 	 */
@@ -206,4 +324,7 @@ public class WordAlert {
 		return CHARCOVER[c];
 	}
 
+//	public static void main(String[] args) {
+//		System.out.println(WordAlert.isEnglish("abc"));
+//	}
 }
